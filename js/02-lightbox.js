@@ -18,26 +18,10 @@ const galleryItemsString = galleryItems.map( item =>
 
 galleryList.innerHTML += galleryItemsString;
 
-galleryList.addEventListener("click", selectImg);
-
-function selectImg(event) {
-
-    event.preventDefault();
-
-    if (event.target.nodeName !== "IMG") {
-        return;
-    };
-
-    // Ініціалізація бібліотеки після створення і додання елементів галереї у ul.gallery.
-    // Подивися в документації секцію «Options» і додай відображення підписів до зображень з атрибута alt.
-    // Нехай підпис буде знизу і з'являється через 250 мілісекунд після відкриття зображення.
-    
-   new SimpleLightbox('.gallery__item a', {
+new SimpleLightbox('.gallery__item a', {
     captions: true,
-    captionType: 'attr', 
+    captionType: 'attr',
     captionsData: 'alt',
     captionPosition: `bottom`,
     captionDelay: 250,
 });
-
-};
